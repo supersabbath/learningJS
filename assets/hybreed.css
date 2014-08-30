@@ -1,0 +1,105 @@
+/* Hybreed Mobile glogal Stylesheet
+ *
+ * This file is part of the Hybreed package.
+ * @license Hybreed Copyright (c) 2010-2013, Aplicaciones y Tratamientos de Sistemas S.A. All Rights Reserved.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Hybreed general considerations
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Body tweaks */
+body {
+  -webkit-font-smoothing: antialiased;
+  /* On mobile devices, the text-size-adjust CSS property allows Web authors to control if and how the text-inflating
+   * algorithm is applied to the textual content of the element it is applied to.
+   * not working in Opera
+   */
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+  /* The text-rendering CSS property provides information to the rendering engine about what to optimize for
+   * when rendering text. The browser makes trade-offs among speed, legibility, and geometric precision. The
+   * text-rendering property is an SVG property that is not defined in any CSS standard. However, Gecko and WebKit
+   * browsers let you apply this property to HTML and XML content on Windows, Mac OS X and Linux.
+   */
+  text-rendering: optimizeLegibility;
+  /* makes border and padding grow inward from width & height mix-and-match units for various box model properties
+   * ex. width: 25%; padding: 15px;
+   * not working in IE7
+   */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /* remove UA-default "touched" treatment for <a> and JS mouse events
+   * enable on elements in a curated fashion with any color value
+   * remember to add your own treatments if you use this
+   * you should be using touch events on supporting UAs anyway
+   * only works in iOS as of this writing
+   */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/* Remove decorations on WebViews */
+a, a:hover {
+  text-decoration: none; }
+
+/* Common fonts */
+@font-face {
+    font-family: roboto;
+    src: url('roboto-reg.ttf')
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url('roboto-thin.ttf')
+}
+
+/* Spinner */
+.spinner {
+    height:60px;
+    width:60px;
+    margin:0px auto;
+    position:relative;
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+    border-top:6px solid rgba(77, 78, 81, 0.10);
+    border-right:6px solid rgba(77, 78, 81, 0.00);
+    border-bottom:6px solid rgba(77, 78, 81, 0.30);
+    border-left:6px solid rgba(77, 78, 81, 0.00);
+    border-radius:100%;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}

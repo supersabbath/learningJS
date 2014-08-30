@@ -1,0 +1,21 @@
+<div id="ecin-programs-toolbar">
+    <div class="ecin-programs-logo">&nbsp;</div>
+</div>
+
+<div id="groove-songs-list">
+    <ul>
+        <li>
+            <% _.each( items, function( listItem ) { %>
+            <div class="program" data-id="<%= listItem._id %>">
+                <div class="ecin-programs-thumbnail">
+                    <img src="<%= listItem.icon %>"/>
+                </div>
+                <div class="ecin-programs-title">
+                    <label><%= listItem.name %></label>
+                </div>
+            </div>
+            <% }); %>
+        </li>
+    </ul>  
+</div>
+
